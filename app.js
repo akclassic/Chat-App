@@ -10,7 +10,7 @@ server.listen(port, () => {
 });
 
 //set public folder
-app.use('/', express.static('public'));
+app.use('/public', express.static(path.join(__dirname, '/public')));
 
 let userinfo = [];
 
