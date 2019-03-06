@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const server = require('http').Server(app);
 const io = require('socket.io')(server);
+const path = require('path');
 
 const port = process.env.Port || 4500;
 
@@ -10,7 +11,7 @@ server.listen(port, () => {
 });
 
 //set public folder
-app.use('/public', express.static(path.join(__dirname, '/public')));
+app.use('/', express.static(path.join(__dirname, '/public')));
 
 let userinfo = [];
 
